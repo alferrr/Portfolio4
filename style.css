@@ -344,12 +344,9 @@ header,
 
 .scrollbtn {
   position: absolute;
-  bottom: 110px;
+  bottom: 5%; /* keeps it near bottom of parent */
   left: 50%;
   transform: translateX(-50%);
-}
-
-.scrollbtn a {
   display: inline-block;
   padding: 12px 36px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -360,17 +357,20 @@ header,
   font-size: 20px;
   border-radius: 30px;
   border: 2px solid white;
-  transition: background 0.3s, transform 0.3s;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   transition: background 0.3s, transform 0.3s;
+  z-index: 10; /* keep above content */
 }
 
-.scrollbtn a:hover {
+.scrollbtn a {
+  text-decoration: none;
+  color: white;
+}
+
+.scrollbtn:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05);
 }
 
 #getstarted {
@@ -1609,7 +1609,7 @@ header,
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   transition: transform 0.3s ease;
 }
 
@@ -1963,4 +1963,40 @@ header,
 .scrollbtn15 a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
+}
+
+#slide1,
+#slide2,
+#slide3,
+#slide4,
+#slide5,
+#slide6,
+#slide7,
+#slide8,
+#slide9,
+#slide10,
+#slide11,
+#slide12,
+#references,
+#about {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#slide12 .scrollbtn {
+  bottom: 20px;
+  left: 1100px;
+}
+
+#references .scrollbtn {
+  left: 1200px;
+  bottom: 30px;
+}
+
+#about .scrollbtn {
+  left: 1225px;
+  bottom: 100px;
 }
